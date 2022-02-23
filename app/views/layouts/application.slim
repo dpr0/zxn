@@ -1,0 +1,75 @@
+doctype html
+html
+  head
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': 'reload', defer: true
+    = favicon_link_tag asset_path('favicon-zxn.png')
+
+    title ZX Spectrum & Z80 online tools | ZXN.RU
+    link href="/public/favicon.ico" rel=('shortcut icon') type="image/x-icon"
+    link href="https://zxn.ru"     rel="canonical"
+    meta name="description"        content="Collection of useful online tools for retro-coding on 8bit computers"
+    meta name="twitter:card"       content="summary_large_image"
+    meta property="og:url"         content="https://zxn.ru/"
+    meta property="og:site_name"   content="ZX Spectrum & Z80 online tools"
+    meta property="og:type"        content="website"
+    meta property="og:title"       content="ZX Spectrum & Z80 online development tools"
+    meta property="og:locale"      content="en_EN"
+    meta property="og:description" content="Z80 disassembly, BIN to HEX, online ZX Spectrum emulator and other magic..."
+    meta property="og:image"       content="#{asset_path('og-image-zxn.png')}"
+
+  body style="background-color: rgba(22,22,22,1)"
+    - unless ['index', 'new'].include? params[:action]
+      nav#mainNav.navbar.navbar-expand-lg.fixed-top
+        .container-fluid
+          .row style="white-space: nowrap"
+            .col-2
+              ul.navbar-nav.bd-navbar-nav.flex-row
+                li.nav-item
+                  = link_to 'ZXN.RU', root_path, class: 'nav-link', style: 'color: #007777'
+            .col-10
+              ul.navbar-nav.bd-navbar-nav.flex-row
+                li.nav-item
+                  = link_to 'File to Hex', converter_hex_path, class: 'nav-link'
+                li.nav-item
+                  = link_to 'File to Dec', converter_dec_path, class: 'nav-link'
+                li.nav-item
+                  = link_to 'Z80 Disasm',  disasm_path, class: 'nav-link'
+                li.nav-item
+                  = link_to 'ZX Emulator', emulator_path, class: 'nav-link'
+                - if current_user
+                  li.nav-item
+                    = link_to 'Sign Out', destroy_user_session_path, class: 'nav-link', method: :delete
+                  li.nav-item
+                    a.nav-link
+                      = current_user.email.present? ? current_user.email : current_user.phone
+                - else
+                  li.nav-item
+                    = link_to 'Sign In', new_user_session_path, class: 'nav-link'
+    = yield
+
+  footer.main-footer.bg-black
+    .container
+      .row.text-white-50
+        .col-12.text-center
+          .small
+            a href='https://t.me/dvitvitskiy' Telegram
+            | /
+            a href="mailto:dvitvitskiy.pro@gmail.com" Email
+            | &nbsp;&copy
+            = "#{Time.now.year}"
+
+link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.6.1/firebaseui.css"
+
+javascript:
+    if ("#{Rails.env}" == 'production') {
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+        ym(81052243, "init", {clickmap: true, trackLinks: true, accurateTrackBounce: true, webvisor: true});
+    }
