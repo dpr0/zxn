@@ -1,39 +1,48 @@
-section.signup-section
-  .container-fluid
-    .row.text-white
-      .col-sm-4
-        = label_tag :splitter, 'Row size:'
-        span &nbsp
-        span#row_size
-        .d-flex
-          form.range-field.w-100
-            input.form-range max="#{@values.size - 1}" min="0" type="range" id="splitter" value="4"
-        .text-center
-          sup = "1..16, #{@values[16..].join(", ")}"
-      .col-sm-4
-        = 'Define:'
-        div
-          - ZilogController::BASIC.each_with_index do |define, index|
-            .form-check.form-check-inline
-              = radio_button_tag(:define, define, define == 'DATA', class: 'form-check-input')
-              label.form-check-label for="define_#{index}" = define
-      .col-sm-2
-        = 'Separator:'
-        div
-          - ZilogController::SEPARATOR[1..].each_with_index do |separator, index|
-            .form-check.form-check-inline
-              = radio_button_tag(:separator, separator, separator == ',', class: 'form-check-input')
-              label.form-check-label for="separator_#{index}" = separator
-      .col-sm-2
-        = label_tag :file, 'File:'
-        span &nbsp
-        span#file_size
-        p = file_field_tag :file, class: 'form-control'
+section.hero.is-lower-alpha
+  .hero-body
+    .container.has-text-white
+      h1.title.is-1
+        = link_to 'ZXN.RU', root_path
+      .columns.is-centered
+        .column.is-3
+          = label_tag :splitter, 'Row size:'
+          span &nbsp
+          span#row_size
+          .d-flex
+            form.range-field.w-100
+              input.form-range max="#{@values.size - 1}" min="0" type="range" id="splitter" value="4"
+          .text-center
+            sup = "1..16, #{@values[16..].join(", ")}"
+        .column.is-3
+          = 'Define:'
+          .control
+            - ZilogController::BASIC.each_with_index do |define, index|
+              p
+                label.radio
+                  label.radio
+                    = radio_button_tag(:define, define, define == 'DATA', class: 'form-check-input')
+                    | &nbsp
+                    = define
+        .column.is-3
+          = 'Separator:'
+          .control
+            - ZilogController::SEPARATOR[1..].each_with_index do |separator, index|
+              p
+                label.radio
+                  = radio_button_tag(:separator, separator, separator == ',', class: 'form-check-input')
+                  | &nbsp
+                  = separator
+        .column.is-3
+          = label_tag :file, 'File:'
+          span &nbsp
+          span#file_size
+          p = file_field_tag :file, class: 'form-control'
 
-    .row
-      .col-sm-12
-        .file
-          = render partial: 'converter'
+section#parallax-computers.hero
+  .hero-body
+    .container
+      .file
+        = render partial: 'converter'
 
 javascript:
     var input = $('#splitter');

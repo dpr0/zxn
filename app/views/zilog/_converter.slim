@@ -1,5 +1,7 @@
-.btn-group-sm
-  = link_to 'Copy to clipboard', '#', class: 'btn btn-xs btn-outline-primary', onclick: 'copy_to_clipboard()'
-  = link_to 'Download', '#', class: 'btn btn-xs btn-outline-success', onclick: 'download_txt()'
-.input-group
-  textarea.form-control#textarea rows="25" = @result
+.columns.is-centered
+  .column.is-12
+    = link_to 'Copy to clipboard', '#', class: 'button is-link', onclick: 'copy_to_clipboard()'
+    = link_to 'Download', '#', class: 'button is-link', onclick: 'download_txt()'
+.columns.is-centered
+  .column.is-12
+    textarea.textarea#textarea rows="25" = @result
