@@ -41,10 +41,8 @@ html
         | Copyright &copy;
         = " 2019-#{Time.now.year}"
 
-link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.6.1/firebaseui.css"
-
 javascript:
-    if ("#{Rails.env}" == 'production') {
+    if ("#{Rails.env}" === 'production') {
         (function (m, e, t, r, i, k, a) {
             m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
             m[i].l = 1 * new Date();

@@ -1,36 +1,44 @@
-section.signup-section
-  .container-fluid
-    .row.text-white
-      .col-sm-3
-        p
-          div = label_tag :org, 'ORG:'
-          = number_field_tag :org, @org, min: 0, max: 65535, class: 'form-control'
-        p
-          .row
-            - (1..4).each do |i|
-              .col-3
-                = link_to '#', id: "inc_s#{i}", onclick: ("change('s#{i}', '>'); return false;") do
-                  i.fas.fa-caret-up
-          .row
-            - (1..4).each do |i|
-              .col-3
-                = select_tag "s#{i}", options_for_select((0..9).to_a + ('A'..'F').to_a, i==1 ? 8 : 0), id: "s#{i}", include_blank: false
-          .row
-            - (1..4).each do |i|
-              .col-3
-                = link_to '#', id: "dec_s#{i}", onclick: ("change('s#{i}', '<'); return false;") do
-                  i.fas.fa-caret-down
-          = text_field_tag :org_hex, "##{@org.to_s(16)}", class: 'form-control', placeholder: '#'
-        p
-          = label_tag :file, 'File:'
-          span &nbsp
-          span#file_size
-          = file_field_tag :file, class: 'form-control'
-        p
-          #log
-      .col-sm-9
-        .file
-          = render partial: 'disasm'
+section.hero.is-lower-alpha
+  .hero-body
+    .container.has-text-white
+      h1.title.is-1
+        = link_to 'ZXN.RU', root_path
+      .columns.is-centered
+        .column.is-4
+          p
+            div = label_tag :org, 'ORG:'
+            = number_field_tag :org, @org, min: 0, max: 65535, class: 'form-control'
+          p
+            .columns.is-centered
+              - (1..4).each do |i|
+                .column.is-3
+                  = link_to '#', id: "inc_s#{i}", onclick: ("change('s#{i}', '>'); return false;") do
+                    i.fas.fa-caret-up
+            .columns.is-centered
+              - (1..4).each do |i|
+                .column.is-3
+                  = select_tag "s#{i}", options_for_select((0..9).to_a + ('A'..'F').to_a, i==1 ? 8 : 0), id: "s#{i}", include_blank: false
+            .columns.is-centered
+              - (1..4).each do |i|
+                .column.is-3
+                  = link_to '#', id: "dec_s#{i}", onclick: ("change('s#{i}', '<'); return false;") do
+                    i.fas.fa-caret-down
+            = text_field_tag :org_hex, "##{@org.to_s(16)}", class: 'form-control', placeholder: '#'
+        .column.is-4
+          p
+            = label_tag :file, 'File:'
+            span &nbsp
+            span#file_size
+            = file_field_tag :file, class: 'form-control'
+        .column.is-4
+          p
+            #log
+
+section#parallax-computers.hero
+  .hero-body
+    .container
+      .file
+        = render partial: 'disasm'
 
 javascript:
 

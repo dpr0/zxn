@@ -25,7 +25,7 @@ gem 'stimulus-rails'
 gem 'turbo-rails'
 
 group :development do
-  gem 'byebug'
+  gem 'debug'
   gem 'rubocop'
   gem 'capistrano',            require: false
   gem 'capistrano-bundler',    require: false

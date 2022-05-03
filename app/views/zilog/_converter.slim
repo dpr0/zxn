@@ -1,7 +1,7 @@
 .columns.is-centered
   .column.is-12
-    = link_to 'Copy to clipboard', '#', class: 'button is-link', onclick: 'copy_to_clipboard()'
-    = link_to 'Download', '#', class: 'button is-link', onclick: 'download_txt()'
-.columns.is-centered
-  .column.is-12
-    textarea.textarea#textarea rows="25" = @result
+    = link_to 'Copy to clipboard', '#', class: 'button is-success', onclick: 'copy_to_clipboard()'
+    = link_to 'Download', '#', class: 'button is-warning', onclick: 'download_txt()'
+    br
+    textarea.textarea#textarea rows="25" mode="assembly_x86" theme="monokai" = @result
+    / ace-editor mode="assembly_x86" theme="monokai" id="textarea" = @result
