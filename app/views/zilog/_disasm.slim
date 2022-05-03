@@ -1,21 +1,11 @@
-.btn-group-sm
-  = link_to 'Demo', disasm_path(demo: true), class: 'btn btn-xs btn-outline-warning', remote: true
-  = link_to 'Copy to clipboard', '#', class: 'btn btn-xs btn-outline-primary', onclick: 'copy_to_clipboard()'
-  = link_to 'Download', '#', class: 'btn btn-xs btn-outline-success', onclick: 'download_txt()'
-  - if params[:action] == 'disasm'
-    = link_to 'Compile', '#', class: 'btn btn-xs btn-outline-danger', onclick: 'compile_txt()'
-    / = link_to 'Run .TAP', '#', class: 'btn btn-xs btn-outline-primary', id: :fff
-.input-group
-  textarea.form-control#textarea rows="28" = @result
-  #editor = @result
-
-script src="https://pagecdn.io/lib/ace/1.4.12/ace.js"
-
-javascript:
-    var editor = ace.edit("editor");
-    editor.setTheme("ace/theme/monokai");
-    editor.session.setMode("ace/mode/assembly_x86");
-    editor.setOptions({
-        autoScrollEditorIntoView: true,
-        copyWithEmptySelection: true,
-    });
+.columns.is-centered
+  .column.is-12
+    = link_to 'Demo', disasm_path(demo: true), class: 'button is-warning', remote: true
+    = link_to 'Copy to clipboard', '#', class: 'button is-primary', onclick: 'copy_to_clipboard()'
+    = link_to 'Download', '#', class: 'button is-success', onclick: 'download_txt()'
+    - if params[:action] == 'disasm'
+      = link_to 'Compile', '#', class: 'button is-danger', onclick: 'compile_txt()'
+      / = link_to 'Run .TAP', '#', class: 'button is-primary', id: :fff
+    br
+    textarea.textarea#textarea rows="28" = @result
+    #editor = @result

@@ -44,9 +44,9 @@ javascript:
 
     function change(i, x) {
         var ddl = document.getElementById(i);
-        if (x === '<' && ddl.selectedIndex == 0) {
+        if (x === '<' && ddl.selectedIndex === 0) {
             ddl.selectedIndex = 15
-        } else if (x === '>' && ddl.selectedIndex == 15) {
+        } else if (x === '>' && ddl.selectedIndex === 15) {
             ddl.selectedIndex = 0
         } else {
             ddl.selectedIndex = x === '>' ? ddl.selectedIndex + 1 : ddl.selectedIndex - 1

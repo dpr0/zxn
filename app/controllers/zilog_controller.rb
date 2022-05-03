@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class ZilogController < ApplicationController
+  protect_from_forgery with: :null_session
 
   PREFIX    = ['', '#', '$', '0x'].freeze
   SEPARATOR = ['_', ',', ',_'].freeze
