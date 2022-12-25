@@ -1,11 +1,12 @@
 .columns.is-centered
   .column.is-12
-    = link_to 'Demo', disasm_path(demo: true), class: 'button is-warning', remote: true
-    = link_to 'Copy to clipboard', '#', class: 'button is-primary', onclick: 'copy_to_clipboard()'
-    = link_to 'Download', '#', class: 'button is-success', onclick: 'download_txt()'
-    - if params[:action] == 'disasm'
+    .buttons.has-addons
+      / - if params[:action] == 'disasm'
       = link_to 'Compile', '#', class: 'button is-danger', onclick: 'compile_txt()'
       / = link_to 'Run .TAP', '#', class: 'button is-primary', id: :fff
+      = link_to 'Demo', disasm_path(demo: true), class: 'button is-warning', remote: true
+      = link_to 'Download', '#', class: 'button is-success', onclick: 'download_txt()'
+      = link_to 'Copy to clipboard', '#', class: 'button is-info', onclick: 'copy_to_clipboard()'
     br
     textarea.textarea#textarea rows="28" = @result
     #editor = @result

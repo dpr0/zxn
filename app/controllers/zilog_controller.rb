@@ -11,9 +11,7 @@ class ZilogController < ApplicationController
   before_action :check_file
   before_action :converter, only: [:converter_hex, :converter_dec]
 
-  def index
-
-  end
+  def index; end
 
   def disasm
     @org = 32_768
@@ -33,13 +31,11 @@ class ZilogController < ApplicationController
     file.write(Z80Disassembler::Disassembler.compile_text(file_name))
     file.close
     @compiled = system "sjasmplus --nologo #{file.path} 2> #{file_name}.log"
-    @logs = File.open("#{file_name}.log").read.split("\n")
+    @logs = File.read("#{file_name}.log").split("\n")
     render layout: false
   end
 
-  def emulator
-
-  end
+  def emulator; end
 
   def converter_hex
     return if @error
@@ -56,10 +52,10 @@ class ZilogController < ApplicationController
     render layout: false
   end
 
-  def download_tap; send_file("#{file_name}.tap", filename: 'disasm.tap'); end
-  def download_sna; send_file("#{file_name}.sna", filename: 'disasm.sna'); end
-  def download_hob; send_file("#{file_name}.$C",  filename: 'disasm.$C' ); end
-  def download_cod; send_file("#{file_name}.bin", filename: 'disasm.bin'); end
+  def download_tap = send_file("#{file_name}.tap", filename: 'disasm.tap')
+  def download_sna = send_file("#{file_name}.sna", filename: 'disasm.sna')
+  def download_hob = send_file("#{file_name}.$C",  filename: 'disasm.$C' ) # rubocop:disable Layout/SpaceInsideParens
+  def download_cod = send_file("#{file_name}.bin", filename: 'disasm.bin')
 
   private
 
@@ -71,7 +67,7 @@ class ZilogController < ApplicationController
     return @file_name if @file_name
 
     dir = current_user ? "tmp/users/user_#{current_user.id.to_s(16).rjust(4, '0')}" : 'tmp'
-    Dir.mkdir(dir) unless Dir.exist?(dir)
+    FileUtils.mkdir_p(dir)
     @file_name = "#{dir}/disasm"
   end
 

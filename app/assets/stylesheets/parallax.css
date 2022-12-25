@@ -46,8 +46,9 @@ hr.content-divider {
 }
 
 #parallax-computers {
-    background: url(https://source.unsplash.com/featured/?computers);
-    background-attachment: fixed;
+    /*background: url(https://source.unsplash.com/featured/?computers);*/
+    background: url(spectrum_1.jpg);
+    /*background-attachment: fixed;*/
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -75,3 +76,5 @@ input::placeholder {
 table, tbody, tr, th, td{
     background-color: rgba(255, 255, 255, 0.1) !important;
 }
+
+.button { transform: skewX(-45deg); }

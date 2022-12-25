@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class CallbacksController < Devise::OmniauthCallbacksController
-
   def yandex
     upsert_user('YANDEX')
   end
@@ -24,7 +23,7 @@ class CallbacksController < Devise::OmniauthCallbacksController
     set_flash_message(:notice, :success, kind: provider) if is_navigational_format?
   end
 
-  def auth(params)
+  def auth(params) # rubocop:disable Metrics/MethodLength
     email    = params.dig(:user, :email).present? ? params.dig(:user, :email) : params.dig(:info, :email)
     uid      = params[:uid]      || params.dig(:user, :uid)
     provider = params[:provider] || params.dig(:user, :provider)
