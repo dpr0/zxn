@@ -26,11 +26,11 @@ Rails.start()
 //     autoScrollEditorIntoView: true,
 //     copyWithEmptySelection: true,
 // });
-require('ace-builds/src-noconflict/mode-assembly_x86')
+require('./assembly_z80')
 require('ace-builds/src-noconflict/theme-monokai')
 
 ace.edit("textarea", {
-    mode: "ace-builds/src-noconflict/assembly_x86",
+    mode: "./assembly_z80",
     theme: "ace-builds/src-noconflict/monokai",
     maxLines: 50,
     minLines: 20,

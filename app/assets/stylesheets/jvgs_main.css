@@ -53,30 +53,30 @@
     box-sizing: content-box;
 }
 .jvgs_panel .play-button.ispaused {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px 0px;
+    background: url(iconset.png) 0px 0px;
     width: 30px;
     height: 28px;
     margin: 0px;
     padding: 0px;
 }
 .jvgs_panel .play-button.ispaused:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px 0px;
+    background: url(iconset.png) -30px 0px;
 }
 .jvgs_panel .play-button.ispaused:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px 0px;
+    background: url(iconset.png) -60px 0px;
 }
 .jvgs_panel .play-button {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -30px;
+    background: url(iconset.png) 0px -30px;
     width: 30px;
     height: 28px;
     margin: 0px;
     padding: 0px;
 }
 .jvgs_panel .play-button:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -30px;
+    background: url(iconset.png) -30px -30px;
 }
 .jvgs_panel .play-button:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -30px;
+    background: url(iconset.png) -60px -30px;
 }
 
 .jvgs_panel .sound-button {
@@ -86,40 +86,40 @@
     padding: 0px;
 }
 .jvgs_panel .sound-button.lev0 {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -60px;
+    background: url(iconset.png) 0px -60px;
 }
 .jvgs_panel .sound-button.lev0:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -60px;
+    background: url(iconset.png) -30px -60px;
 }
 .jvgs_panel .sound-button.lev0:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -60px;
+    background: url(iconset.png) -60px -60px;
 }
 .jvgs_panel .sound-button.lev1 {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -90px;
+    background: url(iconset.png) 0px -90px;
 }
 .jvgs_panel .sound-button.lev1:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -90px;
+    background: url(iconset.png) -30px -90px;
 }
 .jvgs_panel .sound-button.lev1:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -90px;
+    background: url(iconset.png) -60px -90px;
 }
 .jvgs_panel .sound-button.lev2 {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -120px;
+    background: url(iconset.png) 0px -120px;
 }
 .jvgs_panel .sound-button.lev2:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -120px;
+    background: url(iconset.png) -30px -120px;
 }
 .jvgs_panel .sound-button.lev2:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -120px;
+    background: url(iconset.png) -60px -120px;
 }
 .jvgs_panel .sound-button.lev3 {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -150px;
+    background: url(iconset.png) 0px -150px;
 }
 .jvgs_panel .sound-button.lev3:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -150px;
+    background: url(iconset.png) -30px -150px;
 }
 .jvgs_panel .sound-button.lev3:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -150px;
+    background: url(iconset.png) -60px -150px;
 }
 
 .jvgs_panel .volume-control {
@@ -160,36 +160,36 @@
     left: -4px;
 }
 .jvgs_panel .save-button {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -180px;
+    background: url(iconset.png) 0px -180px;
     width: 30px;
     height: 28px;
     margin: 0px;
     padding: 0px;
 }
 .jvgs_panel .save-button:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -180px;
+    background: url(iconset.png) -30px -180px;
 }
 .jvgs_panel .save-button:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -180px;
+    background: url(iconset.png) -60px -180px;
 }
 .jvgs_panel .load-button {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -210px;
+    background: url(iconset.png) 0px -210px;
     width: 30px;
     height: 28px;
     margin: 0px;
     padding: 0px;
 }
 .jvgs_panel .load-button:hover {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -210px;
+    background: url(iconset.png) -30px -210px;
 }
 .jvgs_panel .load-button:active {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -210px;
+    background: url(iconset.png) -60px -210px;
 }
 
 
 /* icons */
 .jvgs_panel .mouse-icon {
-    background: url('app/javascript/packs/stylesheets/iconset.png') 0px -240px;
+    background: url(iconset.png) 0px -240px;
     width: 30px;
     height: 28px;
     margin: 0px;
@@ -197,19 +197,19 @@
     float: right;
 }
 .jvgs_panel .mouse-icon.detected {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -30px -240px;
+    background: url(iconset.png) -30px -240px;
 }
 .jvgs_panel .mouse-icon.locked {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -60px -240px;
+    background: url(iconset.png) -60px -240px;
 }
 .jvgs_panel .mouse-icon.locked.lmb {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -90px -240px;
+    background: url(iconset.png) -90px -240px;
 }
 .jvgs_panel .mouse-icon.locked.rmb {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -120px -240px;
+    background: url(iconset.png) -120px -240px;
 }
 .jvgs_panel .mouse-icon.locked.lmb.rmb {
-    background: url('app/javascript/packs/stylesheets/iconset.png') -150px -240px;
+    background: url(iconset.png) -150px -240px;
 }
 .jvgs_status {
     position: absolute;

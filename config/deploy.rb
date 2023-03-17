@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-lock '3.17.0'
+lock '3.17.2'
 
 server 'zxn.ru', port: 2222, roles: %w(app db web), primary: true
 
-set :rbenv_ruby,      '3.0.3'
+set :rbenv_ruby,      '3.0.5'
 set :application,     'zxn'
 set :repo_url,        'git@github.com:dpr0/zxn.git'
 set :deploy_user,     'deploy'
